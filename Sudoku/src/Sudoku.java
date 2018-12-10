@@ -47,7 +47,9 @@ public void insertNumber(Object a, int i, int j) {
 
 	public boolean solve(int i, int j) {
 		if (board[i][j] == 0) {
-
+			helpSolve(i,j);
+		}else{
+			
 		}
 
 		return false;
@@ -61,6 +63,13 @@ public void insertNumber(Object a, int i, int j) {
 		return false;
 
 		
+	}
+	private int[][] findNext(int i, int j){
+		if(j<8){
+			
+			return null;
+		}
+		return null;
 	}
 
 }
