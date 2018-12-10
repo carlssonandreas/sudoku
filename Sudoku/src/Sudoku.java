@@ -12,6 +12,12 @@ public Sudoku(){
 }
 
 public void insertNumber(Object a, int i, int j){
+
+	if(a instanceof Integer){
+		
+	}else{
+		
+	}
 	
 }
 
