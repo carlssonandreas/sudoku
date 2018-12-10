@@ -27,6 +27,7 @@ public void insertNumber(Object a, int i, int j){
 		throw new IllegalArgumentException("You need to insert a number.");
 		
 		
+		
 	}
 	
 }
