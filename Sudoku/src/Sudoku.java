@@ -18,7 +18,6 @@ public Sudoku(){
  */
 public void insertNumber(Object a, int i, int j) {
 
-
 		if(a instanceof Integer){
 			int number= (int) a;
 			if(number>=1 && number<=9 && i>=0 && i<=8 && j>=0 && j<=8){
@@ -83,7 +82,13 @@ public void insertNumber(Object a, int i, int j) {
 		else
 			return helpSolve(i + 1, 0);
 	}
-
+/**
+ * Denna metod kontrollerar först att värdet inte finns i raden, sen kolumnen och sen rutan
+ * @param number
+ * @param row
+ * @param col
+ * @return
+ */
 	private boolean isAllowed(int number, int row, int col){
 		//Kontrollera värdet med raden
 		for(int n=0;n<9;n++){
