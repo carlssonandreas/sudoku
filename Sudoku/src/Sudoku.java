@@ -8,6 +8,7 @@ private int[][] board;
 	
 public Sudoku(){
 	board = new int[9][9];
+	
 }
 
 public void insertNumber(Object a, int i, int j){
