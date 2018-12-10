@@ -21,7 +21,7 @@ public void insertNumber(Object a, int i, int j) {
 
 		if(a instanceof Integer){
 			int number= (int) a;
-			if(number>=1 && number<=9){
+			if(number>=1 && number<=9 && i>=0 && i<=8 && j>=0 && j<=8){
 				board[i][j]=number;
 				
 			}else{
@@ -46,30 +46,77 @@ public void insertNumber(Object a, int i, int j) {
 	}
 
 	public boolean solve(int i, int j) {
-		if (board[i][j] == 0) {
-			helpSolve(i,j);
-		}else{
-			
-		}
-
-		return false;
+		return helpSolve(i,j);
 	}
 
 	private boolean helpSolve(int i, int j) {
-		if (i < 4 && j < 4) {
-
+		if (board[i][j] == 0) {
+			for(int n=1;n<=9;n++){
+				if(isAllowed(n,i,j)==true){
+					board[i][j]=n;
+					if(solveNext(i,j)==true){
+						return true;
+					}
+					
+				}
+			}
+			board[i][j]=0;
+			return false;
+			
+		}else if(isAllowed(board[i][j], i ,j)){
+			if(solveNext(i,j)==true){
+				return true;
+			}
+			return false;
 		}
 		
 		return false;
 
 		
 	}
-	private int[][] findNext(int i, int j){
-		if(j<8){
-			
-			return null;
-		}
-		return null;
+
+	private boolean solveNext(int i, int j) {
+		if(i == 8 && j == 8)
+			return true;
+		if(j < 8)
+			return helpSolve(i, j + 1);
+		else
+			return helpSolve(i + 1, 0);
 	}
 
+	private boolean isAllowed(int number, int row, int col){
+		//Kontrollera värdet med raden
+		for(int n=0;n<9;n++){
+			if(board[row][n]==number && n!=row){
+				return false;
+			}
+			
+		}
+		
+		//kontrollera värdet med kollumnen
+		for(int n=0;n<9;n++){
+			if(board[n][col]==number && n!=col){
+				return false;
+			}
+			
+		}
+		
+		//Kontrollera värdet med 3x3 rutan
+		int rutaRow=(row/3)*3;
+		int rutaCol=(col/3)*3;
+		for(int n=0; n<9; n++){
+			for(int r=rutaRow;r<rutaRow + 3;r++){
+				for(int c=rutaCol;c<rutaCol+3;c++){
+					if(board[r][c]== number && r!=row && c!=col){
+						return false;
+					}
+				}
+				
+				
+			}
+		}
+		
+		return true;
+		
+	}
 }
