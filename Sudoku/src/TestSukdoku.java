@@ -41,6 +41,7 @@ public class TestSukdoku {
 	@Test
 	public void testClear() {
 		s.insertNumber(1, 1, 1);
+		s.clear();
 		assertTrue("clear false", s.getNumber(1,1) == 0);
 	}
 	
