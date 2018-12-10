@@ -77,14 +77,14 @@ public class TestSukdoku {
 		s.insertNumber(3, 7, 4);
 		s.insertNumber(1, 7, 6);
 		s.insertNumber(4, 8, 6);
-		assertTrue("Could not find solution of solveble sudoku", s.solve(0,0)==false );
+		assertTrue("Could not find solution of solveble sudoku", s.solve(0,0));
 	}
 	
 	@Test
 	public void testsolveFalseRow() {
 		s.insertNumber(1, 1, 1);
 		s.insertNumber(1, 2, 1);
-		assertFalse("Could find solution of unsolve(0,0)ble sudoku", s.solve(0,0)==true );
+		assertFalse("Could find solution of unsolve(0,0)ble sudoku", s.solve(0,0) );
 		
 	}
 	
@@ -92,7 +92,7 @@ public class TestSukdoku {
 	public void testsolveFalseColumn() {
 		s.insertNumber(1, 1, 1);
 		s.insertNumber(1, 1, 2);
-		assertFalse("Could find solution of unsolve(0,0)ble sudoku", s.solve(0,0)==true );
+		assertFalse("Could find solution of unsolve(0,0)ble sudoku", s.solve(0,0) );
 
 	}
 	
@@ -100,7 +100,7 @@ public class TestSukdoku {
 	public void testsolveFalseRegion() {
 		s.insertNumber(1, 1, 1);
 		s.insertNumber(1, 2, 2);
-		assertFalse("Could find solution of unsolve(0,0)ble sudoku", s.solve(0,0)==true );
+		assertFalse("Could find solution of unsolve(0,0)ble sudoku", s.solve(0,0) );
 		
 	}
 }
