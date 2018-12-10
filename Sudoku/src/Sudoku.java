@@ -10,7 +10,12 @@ public Sudoku(){
 	board = new int[9][9];
 	
 }
-
+/**
+ * Kontrollerar om a är en integer om inte=> throw exception
+ * Om a integer kontrollera om mellan 1-9
+ * Om det är det sätt in på plats i,j i sudokut
+ * Om inte throw Exception
+ */
 public void insertNumber(Object a, int i, int j){
 
 	if(a instanceof Integer){
@@ -26,7 +31,7 @@ public void insertNumber(Object a, int i, int j){
 	}else{
 		throw new IllegalArgumentException("You need to insert a number.");
 		
-		
+
 		
 	}
 	
