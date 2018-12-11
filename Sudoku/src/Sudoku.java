@@ -49,38 +49,60 @@ public void insertNumber(Object a, int i, int j) {
 	}
 
 	private boolean helpSolve(int i, int j) {
-		if (board[i][j] == 0) {
+		if(i == 8 && j == 8){
+			return true;
+		}else if (board[i][j] == 0) {
 			for(int n=1;n<=9;n++){
 				if(isAllowed(n,i,j)==true){
 					board[i][j]=n;
-					if(solveNext(i,j)==true){
+					if(j < 8){
+						if(helpSolve(i, j + 1)==true){
 						return true;
 					}
-					
+					}else if(i<8 && j==8){
+						if(helpSolve(i + 1, 0)==true){
+						return true;
+						}
+					}
+				
 				}
+				
 			}
 			board[i][j]=0;
 			return false;
-			
-		}else if(isAllowed(board[i][j], i ,j)){
-			if(solveNext(i,j)==true){
+						
+		}else {
+			if(isAllowed(board[i][j], i ,j)){
+		
+				if(i == 8 && j == 8){
 				return true;
 			}
-			return false;
+				if(j < 8){
+					if(helpSolve(i, j + 1)==true){
+					return true;
+				}
+				}else if(i<8 && j==8){
+					if(helpSolve(i + 1, 0)==true){
+					return true;
+					}
+				}
+			
 		}
-		
+		}
 		return false;
-
 		
 	}
 
 	private boolean solveNext(int i, int j) {
-		if(i == 8 && j == 8)
+		if(i == 8 && j == 8){
 			return true;
-		if(j < 8)
+		}
+		if(j < 8){
 			return helpSolve(i, j + 1);
-		else
+		}
+		else{
 			return helpSolve(i + 1, 0);
+		}
 	}
 /**
  * Denna metod kontrollerar först att värdet inte finns i raden, sen kolumnen och sen rutan
@@ -92,7 +114,7 @@ public void insertNumber(Object a, int i, int j) {
 	private boolean isAllowed(int number, int row, int col){
 		//Kontrollera värdet med raden
 		for(int n=0;n<9;n++){
-			if(board[row][n]==number && n!=row){
+			if(board[row][n]==number && n!=col){
 				return false;
 			}
 			
@@ -100,7 +122,7 @@ public void insertNumber(Object a, int i, int j) {
 		
 		//kontrollera värdet med kollumnen
 		for(int n=0;n<9;n++){
-			if(board[n][col]==number && n!=col){
+			if(board[n][col]==number && n!=row){
 				return false;
 			}
 			

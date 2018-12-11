@@ -45,6 +45,7 @@ public class TestSukdoku {
 		assertTrue("clear false", s.getNumber(1,1) == 0);
 	}
 	
+	
 	@Test
 	public void testsolveEmpty() {
 		assertTrue("Could not find solution of empty sudoku", s.solve(0,0) );
