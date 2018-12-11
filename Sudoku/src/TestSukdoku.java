@@ -91,8 +91,8 @@ public class TestSukdoku {
 	
 	@Test
 	public void testsolveFalseColumn() {
-		s.insertNumber(1, 1, 1);
-		s.insertNumber(1, 1, 2);
+		s.insertNumber(1, 1, 3);
+		s.insertNumber(1, 1, 8);
 		assertFalse("Could find solution of unsolve(0,0)ble sudoku", s.solve(0,0) );
 
 	}
