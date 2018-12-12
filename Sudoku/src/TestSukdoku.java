@@ -2,9 +2,6 @@
 
 import static org.junit.Assert.*;
 
-import java.io.PrintStream;
-import java.util.NoSuchElementException;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

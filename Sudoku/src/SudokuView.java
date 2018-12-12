@@ -1,9 +1,20 @@
 
-public class SudokuView {
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+
+public class SudokuView extends Application {
+	
+	
 
 	public static void main(String[] args) {
 		
 
+	}
+
+	public void start(Stage arg0) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

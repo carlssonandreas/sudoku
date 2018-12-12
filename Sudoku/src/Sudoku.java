@@ -19,7 +19,7 @@ public Sudoku(){
 public void insertNumber(Object a, int i, int j) {
 
 		if(a instanceof Integer){
-			int number= (int) a;
+			int number= ((Integer) a).intValue();
 			if(number>=1 && number<=9 && i>=0 && i<=8 && j>=0 && j<=8){
 				board[i][j]=number;
 				
@@ -93,17 +93,7 @@ public void insertNumber(Object a, int i, int j) {
 		
 	}
 
-	private boolean solveNext(int i, int j) {
-		if(i == 8 && j == 8){
-			return true;
-		}
-		if(j < 8){
-			return helpSolve(i, j + 1);
-		}
-		else{
-			return helpSolve(i + 1, 0);
-		}
-	}
+	
 /**
  * Denna metod kontrollerar först att värdet inte finns i raden, sen kolumnen och sen rutan
  * @param number
