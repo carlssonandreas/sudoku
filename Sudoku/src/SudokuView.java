@@ -1,4 +1,3 @@
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -13,6 +12,7 @@ import javafx.stage.Stage;
 public class SudokuView extends Application {
 	
 	
+
 	
 	public void start(Stage stage) throws Exception {
 		BorderPane root= new BorderPane();
@@ -59,6 +59,7 @@ public class SudokuView extends Application {
 		
 		root.setCenter(background);
 		root.setBottom(hbox);
+
 	}
 	public static void main(String[] args) {
 		Application.launch(args);
