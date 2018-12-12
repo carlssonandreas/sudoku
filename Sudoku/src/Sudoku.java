@@ -3,6 +3,7 @@ public class Sudoku {
 
 	private int[][] board;
 
+	
 	public Sudoku(){
 		board = new int[9][9];
 	
